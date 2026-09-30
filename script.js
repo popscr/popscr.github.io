@@ -1,4 +1,4 @@
-```js
+js
 document.addEventListener("DOMContentLoaded", () => {
 
     const codeElement =
