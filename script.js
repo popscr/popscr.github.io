@@ -1,7 +1,6 @@
 Prism.languages.popscript = {
-
     comment: {
-        pattern: /\$\/[\s\S]*/,
+        pattern: /\$\/[^\r\n]*/,
         greedy: true
     },
 
