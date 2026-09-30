@@ -1,84 +1,113 @@
-Prism.languages.popscript = {
-    comment: {
-        pattern: /\$\/[^\r\n]*/,
-        greedy: true
-    },
+```js
+document.addEventListener("DOMContentLoaded", () => {
 
-    string: {
-        pattern: /"(?:\\.|[^"\\])*"/,
-        greedy: true
-    },
+    /*
+     * popscript syntax highlighting
+     */
 
-    keyword: /\b(?:lib|import|int|if|stop)\b/,
+    Prism.languages.popscript = {
 
-    function: {
-        pattern: /\b[a-zA-Z_][a-zA-Z0-9_]*(?=\()/,
-        alias: "function"
-    },
+        comment: {
+            pattern: /\$\/[^\r\n]*/,
+            greedy: true
+        },
 
-    boolean: /\b(?:true|false)\b/,
+        string: {
+            pattern: /"(?:\\.|[^"\\])*"/,
+            greedy: true
+        },
 
-    number: /\b\d+(?:\.\d+)?\b/,
+        keyword: {
+            pattern: /\b(?:lib|import|int|if|stop)\b/
+        },
 
-    operator: /<=|>=|==|!=|[+\-*\/=<>]/,
+        function: {
+            pattern: /\b[a-zA-Z_][a-zA-Z0-9_]*(?=\()/,
+            alias: "function"
+        },
 
-    punctuation: /[();,.]/
-};
+        number: {
+            pattern: /\b\d+(?:\.\d+)?\b/
+        },
 
+        boolean: {
+            pattern: /\b(?:true|false)\b/
+        },
 
-Prism.highlightElement(
-    document.getElementById("popscript-code")
-);
+        operator: {
+            pattern: /<=|>=|==|!=|[+\-*\/=<>]/
+        },
 
+        punctuation: {
+            pattern: /[();,.]/
+        },
 
-const copyButton =
-    document.getElementById("copyButton");
+        parameter: {
+            pattern: /\b(?:from|to)\b/,
+            alias: "property"
+        }
 
-const code =
-`$/ PopScript 1.0.4 example program
-lib import random
-lib import random.number
-
-int min_val = 0 $/ you can don’t use that
-int max_val = 100 $/ just from=0, to=100
-int x = number(from=min_val, to=max_val)
-int y = x + 5
-
-if x > 50;
-    print(x)
-    print("high value")
-stop;
-
-if x <= 50;
-    print(x)
-    print("low value")
-stop;`;
+    };
 
 
-copyButton.addEventListener("click", async () => {
+    /*
+     * Highlight code
+     */
 
-    try {
+    const codeElement =
+        document.getElementById("popscript-code");
 
-        await navigator.clipboard.writeText(code);
+    if (codeElement) {
+        Prism.highlightElement(codeElement);
+    }
 
-        copyButton.textContent = "Copied!";
 
-        setTimeout(() => {
+    /*
+     * Copy button
+     */
 
-            copyButton.textContent = "Copy";
+    const copyButton =
+        document.getElementById("copyButton");
 
-        }, 1500);
+    if (copyButton && codeElement) {
 
-    } catch (error) {
+        copyButton.addEventListener("click", async () => {
 
-        copyButton.textContent = "Failed";
+            const code =
+                codeElement.textContent;
 
-        setTimeout(() => {
+            try {
 
-            copyButton.textContent = "Copy";
+                await navigator.clipboard.writeText(code);
 
-        }, 1500);
+                copyButton.textContent = "Copied!";
+
+                setTimeout(() => {
+
+                    copyButton.textContent = "Copy";
+
+                }, 1500);
+
+            } catch (error) {
+
+                console.error(
+                    "Failed to copy code:",
+                    error
+                );
+
+                copyButton.textContent = "Failed";
+
+                setTimeout(() => {
+
+                    copyButton.textContent = "Copy";
+
+                }, 1500);
+
+            }
+
+        });
 
     }
 
 });
+```
