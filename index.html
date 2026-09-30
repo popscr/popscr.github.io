@@ -46,7 +46,6 @@
             <h1>
                 Simple.
                 <span>Powerful.</span>
-                popscript.
             </h1>
 
             <p>
@@ -81,7 +80,7 @@
     <section id="about" class="section">
 
         <div class="section-title">
-            <span>01</span>
+            <span>1</span>
             <h2>About popscript</h2>
         </div>
 
@@ -102,7 +101,7 @@
     <section id="features" class="section">
 
         <div class="section-title">
-            <span>02</span>
+            <span>2</span>
             <h2>Features</h2>
         </div>
 
@@ -112,7 +111,7 @@
             <div class="card">
 
                 <div class="card-number">
-                    01
+                    1
                 </div>
 
                 <h3>
@@ -130,7 +129,7 @@
             <div class="card">
 
                 <div class="card-number">
-                    02
+                    2
                 </div>
 
                 <h3>
@@ -148,7 +147,7 @@
             <div class="card">
 
                 <div class="card-number">
-                    03
+                    3
                 </div>
 
                 <h3>
@@ -170,7 +169,7 @@
     <section id="example" class="section">
 
         <div class="section-title">
-            <span>03</span>
+            <span>3</span>
             <h2>Example</h2>
         </div>
 
@@ -186,7 +185,7 @@
                 </div>
 
                 <span>
-                    example.pop
+                    example.pscript
                 </span>
 
                 <button id="copyButton">
@@ -196,11 +195,24 @@
             </div>
 
 
-            <pre><code>print("Hello, world!")
+            <pre><code>$/ PopScript 1.0.4 example program
+lib import random
+lib import random.number
 
-name = "popscript"
+int min_val = 0 $/ you can don’t use that
+int max_val = 100 $/ just from=0, to=100
+int x = number(from=min_val, to=max_val)
+int y = x + 5
 
-print("Welcome to " + name)</code></pre>
+if x > 50;
+    print(x)
+    print("high value")
+stop;
+
+if x <= 50;
+    print(x)
+    print("low value")
+stop;</code></pre>
 
         </div>
 
