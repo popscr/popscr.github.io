@@ -1,86 +1,23 @@
-/*
- * popscript syntax highlighting
- */
-
 Prism.languages.popscript = {
-
-    /*
-     * Comments
-     *
-     * Example:
-     * $/ this is a comment
-     */
-
     comment: {
         pattern: /\$\/[^\r\n]*/,
         greedy: true
     },
-
-
-    /*
-     * Strings
-     */
-
     string: {
         pattern: /"(?:\\.|[^"\\])*"/,
         greedy: true
     },
-
-
-    /*
-     * Keywords
-     */
-
     keyword: /\b(?:lib|import|int|if|stop)\b/,
-
-
-    /*
-     * Functions
-     *
-     * Example:
-     * print()
-     * number()
-     */
-
     function: {
         pattern: /\b[a-zA-Z_][a-zA-Z0-9_]*(?=\()/,
         alias: "function"
     },
-
-
-    /*
-     * Boolean values
-     */
-
     boolean: /\b(?:true|false)\b/,
-
-
-    /*
-     * Numbers
-     */
-
     number: /\b\d+(?:\.\d+)?\b/,
-
-
-    /*
-     * Operators
-     */
-
     operator: /<=|>=|==|!=|[+\-*\/=<>]/,
-
-
-    /*
-     * Punctuation
-     */
-
     punctuation: /[();,.]/
 
 };
-
-
-/*
- * Highlight code
- */
 
 document.addEventListener(
     "DOMContentLoaded",
@@ -97,11 +34,6 @@ document.addEventListener(
             Prism.highlightElement(code);
 
         }
-
-
-        /*
-         * Copy button
-         */
 
         const copyButton =
             document.getElementById(
