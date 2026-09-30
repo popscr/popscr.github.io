@@ -1,6 +1,42 @@
-const copyButton = document.getElementById("copyButton");
+Prism.languages.popscript = {
 
-const code = `$/ PopScript 1.0.4 example program
+    comment: {
+        pattern: /\$\/[\s\S]*/,
+        greedy: true
+    },
+
+    string: {
+        pattern: /"(?:\\.|[^"\\])*"/,
+        greedy: true
+    },
+
+    keyword: /\b(?:lib|import|int|if|stop)\b/,
+
+    function: {
+        pattern: /\b[a-zA-Z_][a-zA-Z0-9_]*(?=\()/,
+        alias: "function"
+    },
+
+    boolean: /\b(?:true|false)\b/,
+
+    number: /\b\d+(?:\.\d+)?\b/,
+
+    operator: /<=|>=|==|!=|[+\-*\/=<>]/,
+
+    punctuation: /[();,.]/
+};
+
+
+Prism.highlightElement(
+    document.getElementById("popscript-code")
+);
+
+
+const copyButton =
+    document.getElementById("copyButton");
+
+const code =
+`$/ PopScript 1.0.4 example program
 lib import random
 lib import random.number
 
