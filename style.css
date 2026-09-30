@@ -24,11 +24,6 @@ body {
     line-height: 1.6;
 }
 
-
-/*
- * Prism syntax colors
- */
-
 .token.comment {
     color: #6a9955 !important;
 }
@@ -60,11 +55,6 @@ body {
 .token.boolean {
     color: #569cd6 !important;
 }
-
-
-/*
- * Navbar
- */
 
 .navbar {
     width: 100%;
@@ -121,11 +111,6 @@ body {
 .navbar nav a:hover {
     color: #ffffff;
 }
-
-
-/*
- * Hero
- */
 
 .hero {
     min-height: 620px;
@@ -187,11 +172,6 @@ body {
     font-size: 18px;
 }
 
-
-/*
- * Buttons
- */
-
 .buttons {
     display: flex;
 
@@ -242,11 +222,6 @@ body {
     background: #17171a;
 }
 
-
-/*
- * Sections
- */
-
 .section {
     max-width: 1100px;
 
@@ -292,11 +267,6 @@ body {
 
     font-size: 17px;
 }
-
-
-/*
- * Cards
- */
 
 .cards {
     display: grid;
@@ -344,11 +314,6 @@ body {
 
     font-size: 14px;
 }
-
-
-/*
- * Code window
- */
 
 .code-window {
     overflow: hidden;
@@ -464,11 +429,6 @@ body {
     line-height: 1.7;
 }
 
-
-/*
- * CTA
- */
-
 .cta {
     padding: 100px 7%;
 
@@ -492,11 +452,6 @@ body {
 
     color: #888888;
 }
-
-
-/*
- * Footer
- */
 
 footer {
     min-height: 90px;
@@ -538,11 +493,6 @@ footer a {
 footer a:hover {
     color: #ffffff;
 }
-
-
-/*
- * Mobile
- */
 
 @media (max-width: 700px) {
 
